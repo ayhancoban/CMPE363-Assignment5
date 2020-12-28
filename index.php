@@ -3,7 +3,7 @@
 <body>
 
 <?php
-// PHP Data Objects(PDO) Sample Code:
+// PHP Data Objects(PDO) Code:
 try {
     $conn = new PDO("sqlsrv:server = tcp:ayhancoban-cmpe363-sv1.database.windows.net,1433; Database = sqldb1", "ayhancoban", "{Ayhan_5462821121}");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -13,15 +13,17 @@ catch (PDOException $e) {
     die(print_r($e));
 }
 
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "ayhancoban", "pwd" => "{your_password_here}", "Database" => "sqldb1", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+// SQL Server Extension Code:
+$connectionInfo = array("UID" => "ayhancoban", "pwd" => "{Ayhan_5462821121}", "Database" => "sqldb1", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:ayhancoban-cmpe363-sv1.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
+// Group Members:
 echo "AYHAN ÇOBAN        112200041"
 echo "GÜLCE GÜLMEZ       117200050"
 echo "ZEYNEP BEGÜM DOST  118200051"
 
+// SQL Query:
 $tsql= "SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName
          FROM [SalesLT].[ProductCategory] pc
          JOIN [SalesLT].[Product] p
